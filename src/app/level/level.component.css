@@ -1,0 +1,82 @@
+body, html {
+  height: 100%;
+  margin: 0;
+}
+
+.robot-container{
+  display: flex;
+  margin-bottom: 20px;
+}
+
+.glow-container {
+  display: grid;
+  z-index: 2;
+  pointer-events: none;
+  --glow: drop-shadow(0 0 1px violet);
+  filter: var(--glow) brightness(1.5) drop-shadow(0 0 10px violet);
+  background: violet;
+  font-weight: bold;
+}
+
+.container{
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin-top: 20px;
+  gap: 50px;
+}
+
+.box {
+  display: flex;
+  width: 300px;
+  margin: 50px auto;
+  background: #84d2df;
+  padding: 20px;
+  text-align: center;
+  line-height: 1.2;
+  justify-content: center;
+  align-items: center;
+  font-weight: 900;
+  color: #fff;
+  position:relative;
+  border-radius: 15px;
+}
+
+.sb:before {
+  content: "";
+  position: absolute;
+  border-left: 10px solid #84d2df;
+  border-right: 10px solid transparent;
+  border-top: 10px solid #84d2df;
+  border-bottom: 10px solid transparent;
+  left: 19px;
+  bottom: -19px;
+}
+
+.info-msg,
+.success-msg,
+.warning-msg,
+.error-msg {
+  margin: 10px 0;
+  padding: 10px;
+  border-radius: 3px 3px 3px 3px;
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+.info-msg {
+  color: #059;
+  background-color: #84d2df;
+}
+.success-msg {
+  color: #270;
+  background-color: #DFF2BF;
+}
+.warning-msg {
+  color: #9F6000;
+  background-color: #FEEFB3;
+}
+.error-msg {
+  color: #D8000C;
+  background-color: #FFBABA;
+}

@@ -1,0 +1,27 @@
+<div class="container">
+  <mat-card class="glow-container">Level {{level}}</mat-card>
+  <mat-card>
+    <div class="robot-container">
+      <img src="/assets/icons/robot-head.png" alt="robot" height="200px">
+      <mat-card-title class="box sb">
+        {{taskTitle}}
+      </mat-card-title>
+    </div>
+    <mat-card-subtitle class="info-msg" *ngIf="!success">
+      <mat-icon>info</mat-icon>
+      {{taskDescription}}
+    </mat-card-subtitle>
+    <mat-card-content>
+      var deinName = <input type="text" class="form-control" [(ngModel)]="name" id="name"> ;
+    </mat-card-content>
+    <mat-divider inset></mat-divider>
+    <mat-card-content *ngIf="success" class="success-msg">
+      <mat-icon>check_circle</mat-icon>
+      Super {{name}}, du hast erfolgreich einer Variablen deinen Namen zugewiesen!
+    </mat-card-content>
+    <mat-card-actions>
+      <button mat-button (click)="checkInput()">Überprüfen</button>
+      <button mat-button [disabled]="disabled">Nächstes Level</button>
+    </mat-card-actions>
+  </mat-card>
+</div>
