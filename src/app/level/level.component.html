@@ -12,12 +12,17 @@
       {{taskDescription}}
     </mat-card-subtitle>
     <mat-card-content>
-      var deinName = <input type="text" class="form-control" [(ngModel)]="name" id="name"> ;
+      var deinName =
+      <input type="text" [(ngModel)]="name" id="name"> ;
     </mat-card-content>
     <mat-divider inset></mat-divider>
     <mat-card-content *ngIf="success" class="success-msg">
       <mat-icon>check_circle</mat-icon>
       Super {{name}}, du hast erfolgreich einer Variablen deinen Namen zugewiesen!
+    </mat-card-content>
+    <mat-card-content *ngIf="success === false" class="error-msg">
+      <mat-icon>error</mat-icon>
+      Das hat leider nicht funktioniert. Bitte tippe deinen Namen in dem Feld ein.
     </mat-card-content>
     <mat-card-actions>
       <button mat-button (click)="checkInput()">Überprüfen</button>
